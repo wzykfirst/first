@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业</title>
+</head>
+<body>
+	<script>
+	//任意算法
+	// var arr=[2,3,4,5,6,7];
+	// var result=map(arr,fn);
+	// console.log(result);
+	// function fn(value){
+	// 	return value*2;
+	// }
+	// function map(arr,fn){
+	// 	var newarr=[];
+	// 	for(var i=0;i<arr.length;i++){
+	// 		newarr[newarr.length]=fn(arr[i]);
+	// 	}
+	// 	return newarr;
+	// }
+	//筛选任意数组
+	var arr=[3,4,5,6,7,8,9];
+	var result=filter(arr,fn);
+	console.log(result);
+	function fn(value){
+		return value>5;
+	}
+	function filter(arr,fn){
+		var newarr=[];
+		for(var i=1;i<arr.length;i++){
+			if(fn(arr[i])){
+				newarr[newarr.length]=arr[i];
+			}
+		}
+		return newarr;
+	}
+	</script>
+</body>
+</html>
