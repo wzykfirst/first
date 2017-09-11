@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业</title>
+</head>
+<body>
+	<script>
+		document.write("<table border=1 cellspacing=0>")
+		for(i=1;i<=10;i++){
+			document.write("<tr>")
+			for(j=1;j<=10;j++){
+				document.write("<td>"+i+"-"+j+"</td>")
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+		//九九乘法表
+		document.write("<table cellspacing=10>")
+		for(i=1;i<=9;i++){
+			document.write("<tr>")
+			for(j=1;j<=i;j++){
+				var a = j*i;
+				document.write("<td>"+j+"*"+i+"="+a+"</td>")
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+		//隔行换色
+		document.write("<table border=1 cellspacing=0>")
+		for(i=1;i<=10;i++){
+			if(i%2==1){
+				document.write("<tr bgcolor=pink>")
+			}else{
+				document.write("<tr bgcolor=red>")
+			}
+			for(j=1;j<=10;j++){
+				document.write("<td>"+i+"-"+j+"</td>")
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+		//格列换色
+		document.write("<table border=1 cellspacing=0>")
+		for(i=1;i<=10;i++){
+			document.write("<tr>")
+			for(j=1;j<=10;j++){
+				if(j%2==1){
+					document.write("<td style='background:blue'>"+i+"-"+j+"</td>")
+				}
+				else{
+					document.write("<td style='background:green'>"+i+"-"+j+"</td>")
+				}
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+	</script>
+</body>
+</html>
