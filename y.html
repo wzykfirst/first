@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//回调函数
+		// var arr=[3,4,5,6,7,8];
+		// var result=map(arr,function(value){
+		// 	return value*2;
+		// })
+		// console.log(result);
+		// function map(arr,fn){
+		// 	var newarr=[];
+		// 	for(var i=0;i<arr.length;i++){
+		// 		newarr[newarr.length]=fn(arr[i]);
+		// 	}
+		// 	return newarr;
+		// }
+		//	some
+		function some(arr,fn){
+			for(var i=0;i<arr.length;i++){
+				if(fn(arr[i])){
+					return true;
+				}
+			}
+			return false;
+		}
+		var arr=[3,4,-1,0,8,-4];
+		var x=some(arr,function(value){
+			return value>0;
+		})
+		console.log(x);
+		// every
+		function every(arr,fn){
+			for(var i=0;i<arr.length;i++){
+				if(!fn(arr[i])){
+					return false;
+				}
+			}
+			return true;
+		}
+		var arr=[3,5,8,-1,-57,6];
+		var y=every(arr,function(value){
+			return value>0;
+		})
+		console.log(y);
+	</script>
+</body>
+</html>

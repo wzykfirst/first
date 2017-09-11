@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//第一次出现的位置
+		// var arr=[2,4,6,8,10];
+		// var wa=indexof(arr,4);
+		// console.log(wa);
+		// function indexof(arr,num){
+		// 	for(var i=0;i<arr.length;i++){
+		// 		if(arr[i]==num){
+		// 			return i;
+		// 		}
+		// 	}
+		// 	return -1;
+		// }
+		//最后一次出现的位置
+		// var arr=[2,3,4,5,6,7];
+		// var pi=lastindexof(arr,5);
+		// console.log(pi);
+		// function lastindexof(arr,num){
+		// 	for(var i=arr.length-1;i>=0;i--){
+		// 		if(arr[i]==num){
+		// 			return i;
+		// 		}
+		// 	}
+		// 	return -1;
+		// }
+		//反转
+		// var arr=[3,6,9,10,15];
+		// console.log(reverse(arr));
+		// function reverse(arr){
+		// 	var newarr=[];
+		// 	for(var i=arr.length-1;i>-1;i--){
+		// 		push(newarr,arr[i]);
+		// 	}
+		// 	return newarr;
+		// }
+		// function push(arr,...rest){
+		// 	for(var i=0;i<rest.length;i++){
+		// 		arr[arr.length]=rest[i];
+		// 	}
+		// 	return arr;
+		// }
+		//在任意位置删除添加数组元素
+		
+		//删除
+		// var arr=[3,4,5,6,7,8,9];
+		// var sc=spliceCancel(arr,2,3);
+		// console.log(sc);
+		function spliceCancel(arr,pos,num){
+			var newarr=[];
+			for(var i=0;i<arr.length;i++){
+				if(i>=pos && i<pos+num){
+					continue;
+				}
+				newarr[newarr.length]=arr[i];
+			}
+			return newarr;
+		}
+		//添加
+		// var arr=[2,3,4,5,6,7];
+		// var tj=spliceAdd(arr,2,'a','b','x','y');
+		// console.log(tj);
+		function spliceAdd(arr,pos,...rest){
+			var newarr=[];
+			for(var i=0;i<pos;i++){
+				newarr[newarr.length]=arr[i];
+			}
+			for(var i=0;i<rest.length;i++){
+				newarr[newarr.length]=rest[i];
+			}
+			for(i=pos;i<arr.length;i++){
+				newarr[newarr.length]=arr[i];
+			}
+			return newarr;
+		}
+		//结合
+		var arr=[1,2,3,4,5,6,7,8];
+		console.log(splice(arr,2,1,'x','y','z'));
+		function splice(arr,pos,num,...rest){
+			var newarr=spliceCancel(arr,pos,num);
+				if (rest.length>0) {
+					newarr=spliceAdd(newarr,pos,...rest);
+			}
+			return newarr;
+		}
+	</script>
+</body>
+</html>

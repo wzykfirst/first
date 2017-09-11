@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>执行流程</title>
+</head>
+<body>
+	<script>
+		// var a=prompt("请输入成绩",0);
+		// if(90<=a && a<=100){
+		// 	alert('优秀');
+		// }else if(80<=a && a<90){
+		// 	alert('良好');
+		// }else if(70<=a && a<80){
+		// 	alert('中等');
+		// }else if(60<=a && a<70){
+		// 	alert('及格');
+		// }else if(0<=a && a<60){
+		// 	alert('不及格');
+		// }else{
+		// 	alert('输入错误');
+		// }
+		// var week = prompt('输入星期',1);
+		// switch(week){
+		// 	case'1':
+		// 		alert('一组');
+		// 		break;
+		// 	case'2':
+		// 		alert('二组');
+		// 		break;
+		// 	case'3':
+		// 		alert('三组');
+		// 		break;
+		// 	case'4':
+		// 		alert('四组');
+		// 		break;
+		// 	case'5':
+		// 		alert('五组');
+		// 		break;
+		// 	case'6':
+		// 		alert('六组');
+		// 		break;
+		// 	case'7':
+		// 		alert('七组');
+		// 		break;
+		// 	default:
+		// 		alert('输入错误');
+		// }
+		// var sum = 0;
+		// for(var i=1;i<11;i++){
+		// 	sum = sum + i;
+		// }
+		// alert(sum)
+		// var sum = 0,a=1*prompt('输入开始值',0),b=1*prompt('输入结束值',0),c=1*prompt('输入变化量',0)
+		// for(var i=a;i<=b;i=i+c){
+		// 	sum = sum + i;
+		// }
+		// alert(sum);
+
+		var sum = 0,sum1 = 0,a=1*prompt('输入开始值',0),b=1*prompt('输入结束值',0),c=1*prompt('输入变化量',0)
+		for(var i=a;i<=b;i=i+c){
+			if(i%2==1){
+				sum = sum + i;
+			}else{
+				sum1 = sum1 + i;
+			}
+		}
+		alert('奇数和为'+sum);
+		alert('偶数和为'+sum1);
+	</script>
+</body>
+</html>

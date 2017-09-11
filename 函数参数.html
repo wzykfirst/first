@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数参数</title>
+</head>
+<body>
+	<script>
+	//在数组后面调加任意元素
+	// var arr=[1,2,3,4,5,6,7,8];
+	// push(arr,'s','r')
+	// function push(arr){
+	// 	for(var i=1;i<arguments.length;i++){
+	// 		arr[arr.length]=arguments[i];
+	// 	}
+	// 	console.log(arr);
+	// }
+	//任意数组的任意排序
+	// var arr=[1,2,3,4,5,6,7,8,9,10];
+	// sort(arr);
+	// function sort(arr,type='<'){ //   4
+		/*有值   没值,默认值为'<'的四种方式*/
+		 /*if(type ==undefined){
+		 	type = '<'
+		 }*/  //    1
+
+		/* type = type == undefined ? '<' : type;*/  //   2
+
+		/*type = type || '<'*/  //     3
+
+		// if(type =='<'){
+		// 	sortup(arr);
+		// }else if(type =='>'){
+		// 	sortdown(arr);
+		// }
+	// }
+	//升序
+	// function sortup(arr){
+	// 	for(var i=0;i<arr.length;i++){
+	// 	 	for(var j=i+1;j<arr.length;j++){
+	// 	 		if(arr[i]>arr[j]){
+	// 	 			var temp=arr[i];
+	// 	 			arr[i]=arr[j];
+	// 	 			arr[j]=temp;
+	// 	 		}
+	// 	 	}
+	// 	}
+	// 	document.write(arr);
+	// }
+	//降序
+	// function sortdown(arr){
+	// 	for(var i=0;i<arr.length;i++){
+	// 	 	for(var j=i+1;j<arr.length;j++){
+	// 	 		if(arr[i]<arr[j]){
+	// 	 			var temp=arr[i];
+	// 	 			arr[i]=arr[j];
+	// 	 			arr[j]=temp;
+	// 	 		}
+	// 	 	}
+	// 	}
+	// 	document.write(arr);
+	// }
+
+	// function aa(num1,num2){
+	// 	return num1*2+num2;
+	// }
+	// function bb(num1,num2){
+	// 	return num1*2-num2;
+	// }
+	// function cc(num1,num2){
+	// 	return num1*num2;
+	// }
+	// function dd(num1,num2){
+	// 	return num1/num2;
+	// }
+	// function math(num1,num2,fn){
+	// 	return fn(num1,num2)
+	// }
+	// var gg=math(2,4,aa)
+	// alert(gg);
+
+	//映射   作业
+	</script>
+</body>
+</html>
