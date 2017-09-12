@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//构建函数
+		// function student(name,age,sex){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.sex = sex;
+		// 	this.say = function(){
+		// 		alert('www');
+		// 	}
+		// }
+		// let zhangsan = new student('傻逼','20','男');
+		// zhangsan.say();
+		// let wangmazi = new student('王麻子','20','女');
+		// console.log(zhangsan,wangmazi);
+
+		//jison函数
+		// let zhangsan = {
+		// 	'age':10,
+		// 	'name':'zhangsan',
+		// 	'sex':'男',
+		// 	say: function(){
+		// 		alert('ggg');
+		// 	}
+		// }
+		// console.log(zhangsan);
+		// zhangsan.say();
+		//class 类
+		class student{
+			constructor(){
+				this.name = 'zhangsan';
+				this.say = function(){
+					alert('www');
+				}
+			};
+			study(){
+				alert('学习');
+			};
+			play(){
+				alert('play');
+			};
+		}
+		let zhangsan = new student();
+		console.log(zhangsan);
+		zhangsan.say();
+		zhangsan.study();
+	</script>
+</body>
+</html>
