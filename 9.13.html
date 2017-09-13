@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let url='https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+		/*function position(str,rstr){
+			let arr = [];
+			let star = '*'.repeat(rstr.length);
+			while(str.includes(rstr)){
+				arr.push(str.indexOf(rstr));
+				str=str.replace(rstr,star);
+			}
+			return arr;
+		}
+		console.log(position(url,'baidu'));*/
+
+		function position(str){
+			let arr=[];
+			for(let i=0;i<str.length;i++){
+				if(str.substr(i,5)=='baidu'){
+					arr.push(i);
+				}
+			}
+			return arr;
+		}
+		console.log(position(url));
+	</script>
+</body>
+</html>
