@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function person(){
+			this.name='person';
+			this.age=33;
+			this.eat=function(){
+				alert('eat');
+			}
+			this.play=function(){
+				alert('play');
+			}
+		}
+		person.prototype={
+			sleep:function(){
+				alert('sleep');
+			}
+		}
+		function student(){
+			this.class='wuif1707';
+			this.number='wuif1707222';
+		}
+		//通过原型对象继承
+		student.prototype=new person();
+
+		student.prototype.aa=function(){
+			alert('aa');
+		}
+		zhangsan=new person();
+		lisi = new student();
+		console.log(zhangsan);
+		console.log(lisi);
+	</script>
+</body>
+</html>

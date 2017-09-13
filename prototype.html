@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function person(){
+			this.name='zhangsan';
+			this.age=20;
+		}
+		//原型 对象
+		person.prototype={
+			play:function(){
+				alert('wanwanwanwan');
+			},
+			say:function(){
+				alert('hahaha');
+			},
+			sleep:function(){
+				alert('休息');
+			}
+		}
+		person.prototype.eat=function(){
+			alert('eat');
+		}
+		let zhangsan= new person;
+		zhangsan.eat();
+		zhangsan.say();
+		let lisi=new person;
+		console.log(zhangsan);
+		console.log(lisi);
+		delete zhangsan.name;// 删除属性、方法
+	</script>
+</body>
+</html>

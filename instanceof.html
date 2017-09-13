@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function student(){
+			this.name='student';
+		}
+		function person(){
+			this.name='person'
+		}
+		let zhangsan = new student();
+		let lisi = new person();
+		//判断张三是student还是person   判断对象
+		console.log(zhangsan instanceof student);
+		          /* 对象 */          /*构造函数*/
+		console.log(lisi instanceof person);
+
+		let arr=[];
+		console.log(arr instanceof Array);
+		console.log(lisi instanceof Array);
+	</script>
+</body>
+</html>
