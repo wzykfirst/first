@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = ['a','b','c','d','e','f'];
+		let newarr=[];
+		for(let i=0;i<3;i++){
+			let a=Math.floor(Math.random()*arr.length);
+			if(!newarr.includes(arr[a])){
+				newarr.push(arr[a]);
+			}else{
+				i--;
+			}
+		}
+		console.log(newarr);
+	</script>
+</body>
+</html>
