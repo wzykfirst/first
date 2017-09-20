@@ -340,10 +340,11 @@ main{
 /* 导航结束 */
 /* banner开始 */
 .banner{
-	width: 100%;
+	width: 1230px;
 	height: 500px;
 	background: #fff;
 	position: relative;
+	margin: 0 auto;
 }
 .banner-img{
 	width: 1230px;
@@ -359,7 +360,9 @@ main{
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: none;
+	
+	opacity: 0;
+	/* display: none; */
 }
 .banner-img a{
 	display: block;
@@ -371,7 +374,8 @@ main{
 	height: 500px;
 }
 .banner-img li:first-child{
-	display: block;
+	opacity: 1;
+	/* display: block; */
 }
 .banner-left{
 	width: 200px;
@@ -380,7 +384,7 @@ main{
 	float: left;
 	position: absolute;
 	top: 0;
-	left: 60px;
+	left: 0;
 }
 .banner-left li{
 	width: 200px;

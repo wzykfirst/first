@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-09-18 17:38:29
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-09-20 08:28:19
+* @Last Modified time: 2017-09-20 17:07:51
 */
 function getClass(classname,ranger){      //ranger   对象
 	ranger = ranger ? ranger : document;
@@ -45,11 +45,15 @@ window.onload=function(){
 	let right=document.getElementsByClassName('banner-right')[0];
 	let lis=aside.getElementsByTagName('li');
 	let item=document.getElementsByClassName('aaa');
+	let bannerda=$('.banner')[0];
 	let banner=$('.banner-img')[0];
 	let li=banner.getElementsByTagName('li');
 	let dian=$('.dian')[0];
 	let dians=dian.getElementsByTagName('a');
+	let liw=parseInt(window.getComputedStyle(banner,null).width);
 	let num=0;
+	let now=0;
+	let next=0;
 	////////////////////////////////////////
 	for(let i=0;i<lis.length;i++){
 		lis[i].onmouseover=function(){
@@ -63,54 +67,109 @@ window.onload=function(){
 	let t;
 	t=setInterval(move,3000);
 	////////////////////////////////////////
-	banner.onmouseover=function(){
+	bannerda.onmouseover=function(){
 		clearInterval(t);
 	}
-	banner.onmouseout=function(){
+	bannerda.onmouseout=function(){
 		t=setInterval(move,3000);
 	}
 	////////////////////////////////////////
+	let flag=true;
 	left.onclick=function(){
+		if(!flag){
+			return;
+		}
 		movel();
+		flag=false;
 	}
 	right.onclick=function(){
+		if(!flag){
+			return;
+		}
 		move();
+		flag=false;
 	}
 	/////////////////////////////////////////
+	// function move(){
+	// 	num++;
+	// 	if(num==li.length){
+	// 		num=0;
+	// 	}
+	// 	for(let i=0;i<li.length;i++){
+	// 		animate(li[i],{opacity:0});
+	// 		// li[i].style.display='none';
+	// 		dians[i].style.background='#dddddd';
+	// 	}
+	// 	animate(li[num],{opacity:1});
+	// 	// li[num].style.display='block';
+	// 	dians[num].style.background='#a10000';
+	// }
+	// function movel(){
+	// 	num--;
+	// 	if(num<0){
+	// 		num=li.length-1;
+	// 	}
+	// 	for(let i=li.length-1;i>=0;i--){
+	// 		animate(li[i],{opacity:0});
+	// 		// li[i].style.display='none';
+	// 		dians[i].style.background='#dddddd';
+	// 	}
+	// 	animate(li[num],{opacity:1});
+	// 	// li[num].style.display='block';
+	// 	dians[num].style.background='#a10000';
+	// }
+	///////////////////////////////////////////
 	function move(){
-		num++;
-		if(num==li.length){
-			num=0;
+		next++;
+		if(next==li.length){
+			next=0;
 		}
-		for(let i=0;i<li.length;i++){
-			li[i].style.display='none';
-			dians[i].style.background='#dddddd';
-		}
-		li[num].style.display='block';
-		dians[num].style.background='#a10000';
+		dians[next].style.background='#a10000';
+		dians[now].style.background='#dddddd';
+		li[next].style.left=`${liw}px`;
+		animate(li[now],{left:-liw});
+		animate(li[next],{left:0},function(){
+			flag=true;
+		});
+		now=next;
 	}
-	function movel(){
-		num--;
-		if(num<0){
-			num=li.length-1;
+		function movel(){
+		next--;
+		if(next<0){
+			next=li.length-1;
 		}
-		for(let i=li.length-1;i>=0;i--){
-			li[i].style.display='none';
-			dians[i].style.background='#dddddd';
-		}
-		li[num].style.display='block';
-		dians[num].style.background='#a10000';
+		dians[next].style.background='#a10000';
+		dians[now].style.background='#dddddd';
+		li[next].style.left=`${-liw}px`;
+		animate(li[now],{left:liw});
+		animate(li[next],{left:0},function(){
+			flag=true;
+		});
+		now=next;
 	}
 	//////////////////////////////////////////
+	// for(let i=0;i<dians.length;i++){
+	// 	dians[i].onmouseover=function(){
+	// 		for(let i=0;i<li.length;i++){
+	// 			animate(li[i],{opacity:0});
+	// 			// li[i].style.display='none';
+	// 			dians[i].style.background='#dddddd';
+	// 		}
+	// 		animate(li[i],{opacity:1});
+	// 		// li[i].style.display='block';
+	// 		dians[i].style.background='#a10000';
+	// 		num=i;
+	// 	}
+	// }
 	for(let i=0;i<dians.length;i++){
 		dians[i].onmouseover=function(){
-			for(let i=0;i<li.length;i++){
-				li[i].style.display='none';
-				dians[i].style.background='#dddddd';
-			}
-			li[i].style.display='block';
-			dians[i].style.background='#a10000';
-			num=i;
+			if(now==i){return;}
+		dians[i].style.background='#a10000';
+		dians[now].style.background='#dddddd';
+		li[i].style.left=`${liw}px`;
+		animate(li[now],{left:-liw});
+		animate(li[i],{left:0});
+		now=next=i;
 		}
 	}
 }

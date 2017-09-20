@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom</title>
+	<style>
+		#box{
+			width: 250px;
+			height: 350px;
+			background: red;
+			transition: .5s;
+		}
+		button{
+			width: 100px;
+			height: 50px;
+			font-size: 30px;
+			background: blue;
+			color: #fff;
+			border: none;
+			margin-bottom: 30px;
+			margin-right: 35px;
+		}
+	</style>
+</head>
+<body>
+	<button class="chuxian">出现</button>
+	<button class="xiaoshi">消失</button>
+	<button class="hh">哈哈</button>
+	<div id="box"></div>
+	<script>
+		let box = document.getElementById('box');
+		let button=document.getElementsByTagName('button');
+		button[0].onclick=function(){
+			box.style.height='350px';
+		}
+		button[1].onclick=function(){
+			box.style.height='0';
+		}
+		let flag=true;
+		button[2].onclick=function(){
+			if(flag){
+				box.style.height='0';
+				flag=false;
+			}else{
+				box.style.height='350px';
+				flag=true;
+			}
+		}
+	</script>
+</body>
+</html>

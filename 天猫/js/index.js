@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-09-18 18:30:49
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-09-19 23:42:44
+* @Last Modified time: 2017-09-20 16:34:13
 */
 function getClass(classname,ranger){      //ranger   对象
 	ranger = ranger ? ranger : document;
@@ -44,6 +44,7 @@ window.onload=function(){
 	let lis=left.getElementsByTagName('li');
 	let item=document.getElementsByClassName('aaa');
 	let banner=document.getElementsByClassName('banner-img')[0];
+	let bannerda=$('.banner')[0];
 	let img=banner.getElementsByTagName('li');
 	let yuan=document.getElementsByClassName('yuan')[0];
 	let yuan1=yuan.getElementsByClassName('yuan1');
@@ -53,10 +54,10 @@ window.onload=function(){
 	let t;
 	t=setInterval(move,3000);
 	////////////////////////////////////////
-	banner.onmouseover=function(){
+	bannerda.onmouseover=function(){
 		clearInterval(t);
 	}
-	banner.onmouseout=function(){
+	bannerda.onmouseout=function(){
 		t=setInterval(move,3000);
 	}
 	////////////////////////////////////////
@@ -66,10 +67,12 @@ window.onload=function(){
 			num=0;
 		}
 		for(let i=0;i<img.length;i++){
-			img[i].style.display='none';
+			animate(img[i],{opacity:0});
+			// img[i].style.display='none';
 			yuan1[i].style.background='#A2A2A2';
 		}
-		img[num].style.display='block';
+		animate(img[num],{opacity:1});
+		// img[num].style.display='block';
 		yuan1[num].style.background='#f1f1f1';
 	}
 	///////////////////////////////////////////
@@ -85,10 +88,12 @@ window.onload=function(){
 	for(let i=0;i<yuan1.length;i++){
 		yuan1[i].onmouseover=function(){
 			for(let i=0;i<img.length;i++){
-				img[i].style.display='none';
+				animate(img[i],{opacity:0});
+				// img[i].style.display='none';
 				yuan1[i].style.background='#A2A2A2';
 			}
-			img[i].style.display='block';
+			animate(img[i],{opacity:1});
+			// img[i].style.display='block';
 			yuan1[i].style.background='#f1f1f1';
 			num=i;
 		}
